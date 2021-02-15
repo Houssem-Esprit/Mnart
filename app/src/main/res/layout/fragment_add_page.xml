@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/M_colorWhite"
+    android:clipToPadding="false"
+    tools:context=".Controllers.Fragments.AddPage">
+
+    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.ramotion.circlemenu.CircleMenuView
+            android:id="@+id/circle_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:button_colors="@array/colors"
+            app:button_icons="@array/icons"
+          />
+
+
+        <LinearLayout
+            android:id="@+id/postContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgPost"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:scaleType="centerCrop"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7.5"
+                android:orientation="vertical">
+            <View
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/M_gray_popUp"/>
+
+                <EditText
+                    android:id="@+id/titlePost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Give it a title"
+                    android:background="@null"
+                    android:textColor="@color/M_colorBlack"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="@color/M_gray_popUp"/>
+
+                <Spinner
+                    android:id="@+id/categorySpinner"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="@color/M_gray_popUp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:text="Price"/>
+
+                    <EditText
+                        android:id="@+id/pricePost"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="8.5"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        android:background="@null"
+                        android:hint="0.0"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="@color/M_gray_popUp"/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="Description"/>
+
+                <EditText
+                    android:id="@+id/descPost"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:inputType="textMultiLine"
+                    android:hint="Whrite your description..."/>
+
+
+
+
+                <Button
+                    android:id="@+id/createPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="30dp"
+                    app:backgroundTint="@color/M_colorPrimary"
+                    android:text="ADD"
+                    app:shapeAppearance="?attr/shapeAppearanceSmallComponent"
+                    android:textColor="@color/M_colorWhite" />
+
+                <TextView
+                    android:id="@+id/postErrorNotice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/M_errorRed"
+                    android:textSize="12dp"/>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

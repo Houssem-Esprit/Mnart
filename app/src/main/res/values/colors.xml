@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="M_colorPrimary">#F27B63</color>
+    <color name="M_disactive_pink">#33F27B63</color>
+    <color name="M_colorWhite">#FFFFFF</color>
+    <color name="M_colorGray">#F9F9F9</color>
+    <color name="M_colorBlack">#400000</color>
+    <color name="M_colorBlackDark">#000000</color>
+    <color name="M_gray_popUp">#DCDCDC</color>
+    <color name="M_grayDark">#161616</color>
+    <color name="M_errorRed">#FA3E3E</color>
+    <color name="M_whiteSecond">#fafaff</color>
+    <color name="M_purple">#6384F2</color>
+    <color name="M_hyperlink_blue">#00BFFF</color>
+    <color name="M_colorGreen">#00cc00</color>
+    <color name="M_colorInvalidGray">#AAAAAA</color>
+    <color name="S_colorGray">#9B9B9B</color>
+    <color name="M_colorGold">#FFD700</color>
+
+</resources>

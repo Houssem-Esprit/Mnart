@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Controllers.Fragments.Notification">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/alef"
+        android:gravity="left"
+        android:text="Notifications"
+        android:textStyle="bold"
+        android:textColor="@color/M_colorBlackDark"
+        android:textSize="9pt"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/alef"
+        android:gravity="left"
+        android:text="Lastest"
+        android:textStyle="normal"
+        android:textColor="@color/M_colorBlackDark"
+        android:textSize="7pt"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notif_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"/>
+
+</LinearLayout>

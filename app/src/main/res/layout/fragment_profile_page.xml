@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/M_colorGray"
+    tools:context=".Controllers.Fragments.ProfilePage">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/alef_bold"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="My Profile"
+        android:textColor="@color/M_colorPrimary"
+        android:textSize="11pt" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_userImg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        app:civ_border_color="@color/M_colorPrimary"
+        app:civ_border_width="2dp"
+        />
+
+    <TextView
+        android:id="@+id/profile_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/comfortaa"
+        android:gravity="center"
+        android:text="UserName"
+        android:textColor="@color/M_colorBlackDark"
+        android:textSize="11pt" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="PAINTER"
+        android:textColor="@color/M_colorBlackDark"
+        android:textSize="6pt" />
+
+    <ScrollView
+        android:id="@+id/profile_scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="My orders"
+                    android:textColor="@color/M_colorBlackDark"
+                    android:textSize="7.5pt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="No orders yet, make your first!"
+                    android:textColor="@color/S_colorGray"
+                    android:textSize="5pt" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/profile_myOrders_details_button"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                app:icon="@drawable/go_details"
+                app:iconGravity="end"
+                app:iconTint="@color/S_colorGray"
+                app:iconSize="15pt"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="100dp"
+                android:layout_height="0.3dp"
+                android:background="@color/S_colorGray"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="Shipping addresses"
+                    android:textColor="@color/M_colorBlackDark"
+                    android:textSize="7.5pt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="No addresses available yet!"
+                    android:textColor="@color/S_colorGray"
+                    android:textSize="5pt" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/profile_shipping_details_button"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                app:icon="@drawable/go_details"
+                app:iconGravity="end"
+                app:iconTint="@color/S_colorGray"
+                app:iconSize="15pt"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="100dp"
+            android:layout_height="0.3dp"
+            android:background="@color/S_colorGray"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="My reviews"
+                    android:textColor="@color/M_colorBlackDark"
+                    android:textSize="7.5pt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="No reviews comes yet!"
+                    android:textColor="@color/S_colorGray"
+                    android:textSize="5pt" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/profile_myReviews_details_button"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                app:icon="@drawable/go_details"
+                app:iconGravity="end"
+                app:iconTint="@color/S_colorGray"
+                app:iconSize="15pt"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="100dp"
+            android:layout_height="0.3dp"
+            android:background="@color/S_colorGray"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="My Works"
+                    android:textColor="@color/M_colorBlackDark"
+                    android:textSize="7.5pt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="0 works published"
+                    android:textColor="@color/S_colorGray"
+                    android:textSize="5pt" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/profile_myWorks_details_button"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                app:icon="@drawable/go_details"
+                app:iconGravity="end"
+                app:iconTint="@color/S_colorGray"
+                app:iconSize="15pt"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="100dp"
+            android:layout_height="0.3dp"
+            android:background="@color/S_colorGray"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="Settings"
+                    android:textColor="@color/M_colorBlackDark"
+                    android:textSize="7.5pt" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/alef"
+                    android:gravity="left"
+                    android:text="Notifications, password.."
+                    android:textColor="@color/S_colorGray"
+                    android:textSize="5pt" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/profile_settings_details_button"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                app:icon="@drawable/go_details"
+                app:iconGravity="end"
+                app:iconTint="@color/S_colorGray"
+                app:iconSize="15pt"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:background="@android:color/transparent"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

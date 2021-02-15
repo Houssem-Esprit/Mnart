@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/alef</item>
+        <item>@font/alef_bold</item>
+        <item>@font/comfortaa</item>
+        <item>@font/comfortaa_bold</item>
+        <item>@font/roboto</item>
+        <item>@font/rubik</item>
+        <item>@font/rubik_medium</item>
+    </array>
+</resources>
