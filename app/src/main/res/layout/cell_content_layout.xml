@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/M_colorWhite"
+    android:visibility="gone"
+    android:id="@+id/cell_content_id"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/M_colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Post_details_Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Artwork name"
+            android:textSize="18dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/M_colorWhite"
+            android:fontFamily="@font/alef_bold"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/Post_details_postImg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/photography_post"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Owner"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/Post_details_userImg"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"
+                app:civ_border_color="@color/M_colorPrimary"
+                app:civ_border_width="1dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Post_details_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="UserName"
+                    android:textStyle="bold"
+                    android:textColor="@color/M_colorBlackDark"/>
+                <TextView
+                    android:id="@+id/Post_details_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:text="12/10/2021"/>
+
+                <RatingBar
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:scaleY="1.5"
+                    android:scaleX="1.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:progressTint="#ffd500"
+                    android:rating="2.5"
+                    android:stepSize="1.0"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/M_gray_popUp"/>
+
+            <TextView
+                android:id="@+id/Post_details_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="3000$"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/M_gray_popUp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Description"
+            android:textSize="10dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Post_details_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/M_colorBlackDark"
+            android:inputType="textMultiLine"
+            android:textAlignment="textStart"
+            android:text="Contribute to jd-alexander/LikeButton development by creating an account on GitHub. ... dependencies { ... compile 'com.github.jd-alexander:LikeButton:0.2.3' } } ... To listen to events from your like button, simply implement the listener that's ."/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/like_button_ckecked"/>
+            <TextView
+                android:id="@+id/likes_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11dp"
+                android:text="20"
+                android:gravity="center"
+                android:layout_gravity="bottom"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:textSize="15dp"
+                android:text="Comments"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_gravity="bottom"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11dp"
+                android:text="20"
+                android:gravity="center"
+                android:layout_gravity="bottom"/>
+        </LinearLayout>
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/M_gray_popUp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                 <CheckBox
+                     android:id="@+id/LikeButton"
+                     android:layout_marginTop="10dp"
+                     android:layout_width="30dp"
+                     android:layout_height="30dp"
+                     android:layout_gravity="center"
+                     android:button="@null"
+                     android:checked="false"
+                     android:stateListAnimator="@animator/scale"
+                     android:background="@drawable/like_button"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/cours_go_to_details"
+                        android:layout_gravity="center"
+                        android:layout_width="45dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="45dp"
+                        app:icon="@drawable/comment"
+                        app:iconGravity="start"
+                        app:iconTint="#B0B0B0"
+                        app:iconSize="12pt"
+                        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                       />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

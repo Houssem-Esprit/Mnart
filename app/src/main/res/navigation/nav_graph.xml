@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homePage">
+
+    <fragment
+        android:id="@+id/homePage"
+        android:name="com.Syrine.mnart.Controllers.Fragments.HomePage"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePage_to_allPosts"
+            app:destination="@id/allPosts" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPage"
+        android:name="com.Syrine.mnart.Controllers.Fragments.AddPage"
+        android:label="fragment_add_page"
+        tools:layout="@layout/fragment_add_page" />
+    <fragment
+        android:id="@+id/profilePage"
+        android:name="com.Syrine.mnart.Controllers.Fragments.ProfilePage"
+        android:label="fragment_profile_page"
+        tools:layout="@layout/fragment_profile_page" >
+        <action
+            android:id="@+id/action_profilePage_to_myWorksPage"
+            app:destination="@id/myWorksPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchPage"
+        android:name="com.Syrine.mnart.Controllers.Fragments.SearchPage"
+        android:label="fragment_search_page"
+        tools:layout="@layout/fragment_search_page" />
+    <fragment
+        android:id="@+id/video"
+        android:name="com.Syrine.mnart.Controllers.Fragments.Chat"
+        android:label="Videos"
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_video_to_videofragment"
+            app:destination="@id/videofragment" />
+        <action
+            android:id="@+id/action_video_to_addCours"
+            app:destination="@id/addCours" />
+    </fragment>
+    <fragment
+        android:id="@+id/allPosts"
+        android:name="com.Syrine.mnart.Controllers.Fragments.AllPosts"
+        android:label="fragment_all_posts"
+        tools:layout="@layout/fragment_all_posts" >
+        <action
+            android:id="@+id/action_allPosts_to_notificationS"
+            app:destination="@id/notificationS" />
+    </fragment>
+    <fragment
+        android:id="@+id/videofragment"
+        android:name="com.Syrine.mnart.Controllers.Fragments.videofragment"
+        android:label="fragment_videofragment"
+        tools:layout="@layout/fragment_videofragment" />
+    <fragment
+        android:id="@+id/addCours"
+        android:name="com.Syrine.mnart.Controllers.Fragments.AddCours"
+        android:label="fragment_add_cours"
+        tools:layout="@layout/fragment_add_cours" >
+        <action
+            android:id="@+id/action_addCours_to_video"
+            app:destination="@id/video" />
+    </fragment>
+    <fragment
+        android:id="@+id/myWorksPage"
+        android:name="com.Syrine.mnart.Controllers.Fragments.MyWorksPage"
+        android:label="fragment_my_works_page"
+        tools:layout="@layout/fragment_my_works_page" >
+        <action
+            android:id="@+id/action_myWorksPage_to_editPage"
+            app:destination="@id/editPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPage"
+        android:name="com.Syrine.mnart.Controllers.Fragments.EditPage"
+        android:label="EditPage" >
+        <action
+            android:id="@+id/action_editPage_to_myWorksPage"
+            app:destination="@id/myWorksPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationS"
+        android:name="com.Syrine.mnart.Controllers.Fragments.Notification"
+        android:label="notification_card_layout"
+        tools:layout="@layout/notification_card_layout" >
+        <action
+            android:id="@+id/action_notificationS_to_allPosts"
+            app:destination="@id/allPosts" />
+    </fragment>
+</navigation>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="7dp"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="@color/M_colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="5">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/Delet_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/delete"
+                app:tint="@color/M_grayDark"
+                app:backgroundTint="@color/M_colorWhite"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="right|center_vertical"
+                app:fabCustomSize="60dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alef_bold"
+                android:text=""
+                android:layout_gravity="bottom|right"
+                android:gravity="right"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/M_colorWhite"/>
+        </FrameLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="5">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/Edit_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    app:srcCompat="@drawable/edit"
+                    app:tint="@color/M_grayDark"
+                    app:backgroundTint="@color/M_colorWhite"
+                    android:layout_gravity="left|center_vertical"
+                    app:fabCustomSize="60dp" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

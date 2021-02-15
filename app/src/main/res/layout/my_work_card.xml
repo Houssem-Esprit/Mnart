@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="7dp"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/myWork_postImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:src="@drawable/painting"
+                    android:scaleType="centerCrop"/>
+                <view
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    class="android.widget.ImageView"
+                    android:background="@color/S_colorGray"
+                    android:alpha="0.7"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/myWork_userImg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    android:elevation="12dp"
+                    android:layout_gravity="center"
+                    app:civ_border_color="@color/M_colorPrimary"
+                    app:civ_border_width="1dp"
+                    />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:padding="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/myWork_postTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/alef"
+                android:gravity="left"
+                android:text="My work name"
+                android:textColor="@color/M_colorBlackDark"
+                android:textSize="7.5pt" />
+
+            <TextView
+                android:id="@+id/myWork_postDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:fontFamily="@font/alef"
+                android:gravity="left"
+                android:text="12/10/2020 13h 45m"
+                android:textColor="@color/S_colorGray"
+                android:textSize="5pt" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_1"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipIconTint="@color/M_colorPrimary"
+                app:chipIcon="@drawable/paint"
+                app:closeIconEnabled="false"
+                app:chipBackgroundColor="@color/M_colorGray"
+                app:rippleColor="@color/M_colorPrimary"
+                app:chipStrokeWidth="1dp"
+                app:chipStrokeColor="@color/M_colorPrimary"
+                android:text="Painting"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

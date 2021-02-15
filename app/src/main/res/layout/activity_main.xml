@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:id="@+id/coordinatorLay"
+    android:background="@color/M_colorGray"
+    tools:context=".Controllers.Activities.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_id"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/M_colorWhite"
+            app:title="Mn'art"
+            app:titleTextColor="@color/M_colorPrimary"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Note: A RecyclerView can also be used -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_below="@id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <!-- Scrollable content -->
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            android:fitsSystemWindows="true"
+            app:navGraph="@navigation/nav_graph" />
+
+    </androidx.core.widget.NestedScrollView>
+
+
+        <!-- Scrollable content -->
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:fabCradleRoundedCornerRadius="20dp"
+            >
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_nav_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                app:menu="@menu/m_menu"
+                app:itemIconTint="@drawable/bottom_nav_bar_menu_color_tint"
+                app:labelVisibilityMode="unlabeled"
+                android:background="@android:color/transparent"
+                android:layout_gravity="bottom"/>
+
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/bottom_appBar"
+            app:backgroundTint="@color/M_colorPrimary"
+            app:srcCompat="@drawable/ic_add_pub"
+            app:tint="@color/M_colorWhite"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="icons">
+        <item>@drawable/gallery</item>
+        <item>@drawable/capture_photo</item>
+
+    </array>
+    <array name="colors">
+        <item>@android:color/white</item>
+        <item>@android:color/white</item>
+    </array>
+</resources>

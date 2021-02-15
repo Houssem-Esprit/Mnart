@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controllers.Activities.SignIn">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:gravity="bottom"
+            android:layout_gravity="bottom">
+
+            <ImageView
+                android:layout_gravity="bottom|center"
+                android:layout_width="200dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/logooo"
+                />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="2.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="0.6"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.4"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/rubik_medium"
+                android:gravity="center_horizontal"
+                android:text="Welcome"
+                android:textSize="15pt"
+                android:textColor="@color/M_colorWhite"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/rubik"
+                android:gravity="center_horizontal"
+                android:text="Login to join mn'at"
+                android:textAllCaps="true"
+                android:textColor="@color/M_colorWhite"
+                android:textSize="8pt" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                android:padding="30dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/id_email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:boxStrokeColor="@color/M_colorWhite"
+                android:hint="Login"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/M_colorWhite"
+                app:shapeAppearance="?attr/shapeAppearanceSmallComponent"
+                app:shapeAppearanceOverlay="?attr/shapeAppearanceOverlay"
+                app:boxBackgroundColor="@color/M_colorWhite"
+                app:startIconDrawable="@drawable/ic_email_login"
+                app:errorEnabled="true"
+                >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/id_pass_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:boxStrokeColor="@color/M_colorWhite"
+                    android:hint="Password"
+                    app:endIconMode="password_toggle"
+                    app:hintTextColor="@color/M_colorWhite"
+                    app:shapeAppearance="?attr/shapeAppearanceSmallComponent"
+                    app:shapeAppearanceOverlay="?attr/shapeAppearanceOverlay"
+                    app:boxBackgroundColor="@color/M_colorWhite"
+                    app:startIconDrawable="@drawable/ic_pass_login"
+                    app:errorEnabled="true"
+                    >
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/LoginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    app:backgroundTint="@color/M_colorWhite"
+                    android:text="SIGN IN"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:enabled="false"
+                    android:textColor="@color/M_colorPrimary"/>
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>

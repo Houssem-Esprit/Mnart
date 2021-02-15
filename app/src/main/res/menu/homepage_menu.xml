@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/notificationS"
+        android:icon="@drawable/notifications_icon"
+        android:iconTint="#B0B0B0"
+        android:title="Notification"
+        android:enabled="true"
+        app:actionLayout="@layout/custom_notification_layout"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:iconTint="#B0B0B0"
+        android:enabled="true"
+        android:title="Log out"
+        app:showAsAction="always" />
+
+
+</menu>

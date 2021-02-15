@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Mnart</string>
+    <string name="empty_email">Email shouldnt be empty! </string>
+    <string name="empty_password">Password shouldnt be empty! </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alerte_title">Delete Alerte</string>
+    <string name="alerte_support_text">You are about to delete this post permanently, Are you sure?</string>
+    <string name="notification_content"> %1$d has reacted to your post \u003C %2$d \u003E </string>
+    <string name="notification_content_personal"> You have reacted to your post \u003C %1$d \u003E </string>
+
+
+</resources>
