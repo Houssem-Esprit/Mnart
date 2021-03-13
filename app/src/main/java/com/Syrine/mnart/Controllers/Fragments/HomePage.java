@@ -1,9 +1,10 @@
 package com.Syrine.mnart.Controllers.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,18 +14,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
-import com.Syrine.mnart.Controllers.Activities.MainActivity;
-import com.Syrine.mnart.Controllers.Activities.SignIn;
 import com.Syrine.mnart.Controllers.Adapters.CategoryAdapter;
 import com.Syrine.mnart.Controllers.Adapters.GridItemsHomePageAdapter;
 import com.Syrine.mnart.Models.Category;
 import com.Syrine.mnart.Models.Post;
-import com.Syrine.mnart.Models.User;
 import com.Syrine.mnart.R;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
 import com.Syrine.mnart.Utils.DataManager.UtilApi;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -46,6 +45,7 @@ public class HomePage extends Fragment {
     CompositeDisposable disposable = new CompositeDisposable();
     CompositeDisposable Catdisposable = new CompositeDisposable();
 
+    Button Go_to_fragement;
     RecyclerView PostRecyclerView;
     GridItemsHomePageAdapter homePageAdapter;
 
@@ -73,6 +73,14 @@ public class HomePage extends Fragment {
         //UI
         PostRecyclerView = viewroot.findViewById(R.id.RecyclerViewPost);
 
+        /**
+         *
+         */
+
+
+        /**
+         *
+         */
         userApi = UtilApi.getUserApi();
         catrecyclerview=viewroot.findViewById(R.id.catrecyclerView);
         linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
@@ -91,8 +99,8 @@ public class HomePage extends Fragment {
 
                     @Override
                     public void onNext(@NonNull List<Post> cat) {
-                        Log.d(TAG,"onNext: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNnn");
-                        Log.d(TAG,"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"+cat.get(1).getImgPost().toString());
+                        Log.d(TAG,"onNext: ");
+                        Log.d(TAG,""+cat.get(1).getImgPost().toString());
                         homePageAdapter = new GridItemsHomePageAdapter(getContext(),cat);
                         RecyclerView.LayoutManager manager = new GridLayoutManager(getContext(),2);
                         PostRecyclerView.setLayoutManager(manager);

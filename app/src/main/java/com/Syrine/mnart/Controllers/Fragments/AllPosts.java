@@ -10,12 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
-import com.Syrine.mnart.Controllers.Adapters.CoursAdapter;
 import com.Syrine.mnart.Controllers.Adapters.PostCatAdapter;
 import com.Syrine.mnart.Controllers.Interfaces.SocketCallbackInterface;
-import com.Syrine.mnart.Models.CoursPost;
 import com.Syrine.mnart.Models.PostByCategory;
 import com.Syrine.mnart.R;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
@@ -60,6 +57,8 @@ public class AllPosts extends Fragment {
         allPosts_ReceyclerView.setLayoutManager(linearLayoutManager);
         userApi = UtilApi.getUserApi();
 
+        getLifecycle().addObserver(new PostCatAdapter());
+
 
 
         int IdCat = getArguments().getInt("CatID");
@@ -78,7 +77,7 @@ public class AllPosts extends Fragment {
                     public void onNext(@NonNull List<PostByCategory> cat) {
                         Log.d(TAG,"onNext: ");
 
-                        postCatAdapter = new PostCatAdapter(getContext(),getActivity(),cat);
+                        postCatAdapter = new PostCatAdapter(getContext(),getActivity(),cat,IdCat);
                         myPostsList = cat;
                         allPosts_ReceyclerView.setAdapter(postCatAdapter);
                         //editor.putInt("idUser",user.getIdUser());
@@ -110,6 +109,7 @@ public class AllPosts extends Fragment {
 
                     }
                 });
+
 
         return  viewroot;
     }

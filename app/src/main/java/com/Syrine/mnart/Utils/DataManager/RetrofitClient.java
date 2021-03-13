@@ -1,5 +1,8 @@
 package com.Syrine.mnart.Utils.DataManager;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -18,12 +21,17 @@ public class RetrofitClient {
             .readTimeout(5, TimeUnit.MINUTES) // read timeout
             .build();
 
+    static  Gson gson = new GsonBuilder()
+            .setLenient()
+            .create();
+
+
     public static Retrofit getRetrofitClient(String BASE_URL){
         if(retrofit == null){
             retrofit=new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .client(httpClient)
                     .build();
         }

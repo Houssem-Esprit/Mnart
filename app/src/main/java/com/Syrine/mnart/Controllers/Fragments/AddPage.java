@@ -2,7 +2,6 @@ package com.Syrine.mnart.Controllers.Fragments;
 
 import android.Manifest;
 import android.app.Activity;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -32,10 +31,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
 
 import com.Syrine.mnart.BuildConfig;
-import com.Syrine.mnart.Controllers.Adapters.CategoryAdapter;
 import com.Syrine.mnart.Controllers.Interfaces.SocketCallbackInterface;
 import com.Syrine.mnart.Models.Category;
 import com.Syrine.mnart.R;

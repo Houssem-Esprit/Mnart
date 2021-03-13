@@ -1,12 +1,16 @@
 package com.Syrine.mnart.Utils.DataManager;
 
 import com.Syrine.mnart.Models.Category;
+import com.Syrine.mnart.Models.CommentUser;
 import com.Syrine.mnart.Models.CoursPost;
 import com.Syrine.mnart.Models.Notification;
 import com.Syrine.mnart.Models.Post;
 import com.Syrine.mnart.Models.PostByCategory;
 import com.Syrine.mnart.Models.PostLike;
+import com.Syrine.mnart.Models.PostLikesResponse;
+import com.Syrine.mnart.Models.SubComment;
 import com.Syrine.mnart.Models.User;
+import com.Syrine.mnart.Models.UserResponse;
 
 import java.util.List;
 
@@ -28,9 +32,16 @@ public interface UserApi {
 
     @POST("users/authenticate")
     @FormUrlEncoded
-    Flowable<User> Authenticate(
+    Flowable<UserResponse> Authenticate(
             @Field("email") String email,
             @Field("password") String password
+    );
+
+
+    @POST("users/getUserById")
+    @FormUrlEncoded
+    Flowable<UserResponse> getUserById(
+            @Field("id") int idUser
     );
 
     @GET("categories/")
@@ -149,6 +160,12 @@ public interface UserApi {
             @Field("iduser") int idUser
     );
 
+    @POST("postLikes/getLikessByPost")
+    @FormUrlEncoded
+    Flowable<List<PostLikesResponse>> getLikessByPost(
+            @Field("idPost") String idPost
+    );
+
     @GET("postLikes/getNotifications")
     Flowable<List<Notification>> getNotifications(
 
@@ -159,4 +176,105 @@ public interface UserApi {
     Flowable<ResponseBody> updateIsNotifCheckedState(
             @Field("idpostLiked") int idPostLiked
     );
+
+
+    @POST("comments/addComment")
+    @FormUrlEncoded
+    Flowable<ResponseBody> addComment(
+            @Field("idUser") int idUser,
+            @Field("idPost") String idPost,
+            @Field("comnt") String comment
+
+            );
+
+
+    @POST("comments/postCommentsNbr")
+    @FormUrlEncoded
+    Flowable<CommentUser> countPostComments(
+            @Field("idpost") String idPost
+
+    );
+
+    @POST("comments/getCommentsByPost")
+    @FormUrlEncoded
+    Flowable<List<CommentUser>> getCommentsByPost(
+            @Field("idPost") String idPost
+
+    );
+
+
+    @POST("subcomments/addSubComment")
+    @FormUrlEncoded
+    Flowable<ResponseBody> addsubComment(
+            @Field("idUser_Cmnt_Owner") int idUser_Comment_Owner,
+            @Field("idComnt") int idComment,
+            @Field("idUser_Cmnter") int userCommenter,
+            @Field("comnt") String comment
+
+
+    );
+
+
+    @POST("subcomments/postsubCommentsNbr")
+    @FormUrlEncoded
+    Flowable<SubComment> countsubComments(
+            @Field("idUser_Cmnt_Owner") int idUser_Comment_Owner,
+            @Field("idComnt") int idComment
+
+
+            );
+
+    @POST("subcomments/getsubCommentsPerUser")
+    @FormUrlEncoded
+    Flowable<List<SubComment>> getsubCommentsByUser(
+            @Field("idUser_Cmnt_Owner") int idUser_Comment_Owner,
+            @Field("idComnt") int idComment
+
+    );
+
+
+    @POST("followrequests/userToUserFollowingState")
+    @FormUrlEncoded
+    Flowable<String> getUserToUserRelationState(
+            @Field("idUserRequest") int thisSideUser,
+            @Field("idUserToRespond") int otherSideUser
+
+    );
+
+
+    @POST("followrequests/followRequest")
+    @FormUrlEncoded
+    Flowable<ResponseBody> AddFriendRequest(
+            @Field("idUserRequest") int thisSideUser,
+            @Field("idUserToRespond") int otherSideUser
+
+    );
+
+
+    @POST("followrequests/cancelfollowRequest")
+    @FormUrlEncoded
+    Flowable<ResponseBody> CancelFriendRequest(
+            @Field("idUserRequest") int thisSideUser,
+            @Field("idUserToRespond") int otherSideUser
+
+    );
+
+
+    @POST("followrequests/acceptfollowRequest")
+    @FormUrlEncoded
+    Flowable<ResponseBody> AcceptFriendRequest(
+            @Field("idUserRequest") int thisSideUser,
+            @Field("idUserToRespond") int otherSideUser
+
+    );
+
+
+    @POST("followings/deleteFollowing")
+    @FormUrlEncoded
+    Flowable<ResponseBody> DeleteFriendShipRelation(
+            @Field("idUserBidOne") int idUserBidOne,
+            @Field("idUserBidTwo") int idUserBidTwo
+
+    );
+
 }

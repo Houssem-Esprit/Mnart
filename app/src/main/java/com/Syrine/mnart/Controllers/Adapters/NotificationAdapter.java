@@ -2,8 +2,6 @@ package com.Syrine.mnart.Controllers.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -21,14 +19,12 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Syrine.mnart.Models.Category;
 import com.Syrine.mnart.Models.Notification;
 import com.Syrine.mnart.R;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
 import com.Syrine.mnart.Utils.DataManager.UtilApi;
 import com.Syrine.mnart.Utils.Session;
 import com.bumptech.glide.Glide;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

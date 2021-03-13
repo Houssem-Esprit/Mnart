@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/add_post_illustration_card_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="40dp"
+    android:visibility="gone"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <ImageView
+            android:id="@+id/postCategory_illustration"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/paint0_illustration"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/greeting_text_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alef"
+            android:gravity="center"
+            android:text="publish your paints so people can see it."
+            android:textSize="18dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/create_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/M_colorBlackDark"
+            app:strokeWidth="0.5dp"
+            android:textColor="@color/M_colorBlackDark"
+            android:text="create your post"/>
+
+    </LinearLayout>
+
+</LinearLayout>

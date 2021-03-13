@@ -11,10 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.Syrine.mnart.Controllers.Adapters.MyworkAdapter;
 import com.Syrine.mnart.Controllers.Adapters.NotificationAdapter;
 import com.Syrine.mnart.Controllers.Interfaces.SocketCallbackInterface;
-import com.Syrine.mnart.Models.Post;
 import com.Syrine.mnart.R;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
 import com.Syrine.mnart.Utils.DataManager.UtilApi;
@@ -29,7 +27,6 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.socket.client.Socket;
-import okhttp3.ResponseBody;
 
 
 public class Notification extends Fragment {

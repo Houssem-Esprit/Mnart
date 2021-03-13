@@ -1,44 +1,37 @@
 package com.Syrine.mnart.Controllers.Adapters;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Syrine.mnart.Models.Category;
 import com.Syrine.mnart.Models.CoursPost;
 import com.Syrine.mnart.R;
+import com.Syrine.mnart.Utils.Const;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
 import com.Syrine.mnart.Utils.DataManager.UtilApi;
 import com.bumptech.glide.Glide;
-import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.MediaItem;
-import com.google.android.exoplayer2.Player;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
-import com.google.android.exoplayer2.ui.PlayerView;
-import com.google.android.exoplayer2.util.MimeTypes;
-import com.google.android.exoplayer2.util.Util;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -60,6 +53,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.myViewHolder
     private UserApi userApi;
     CompositeDisposable disposable = new CompositeDisposable();
     static final String TAG = "COURS_ADAPTER";
+    long currentPosition;
 
 
 
@@ -91,13 +85,13 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.myViewHolder
          String url_video ="http://localhost:3000/public/videos/cours/"+coursPostsList.get(position).getCoursVideo();
         // UserName
         holder.userName.setText(coursPostsList.get(position).getFirstName()+" "+coursPostsList.get(position).getLastName());
+
         // Cours Date
-        long date = Long.parseLong(coursPostsList.get(position).getDate());
-        Calendar c = Calendar.getInstance();
-        c.setTimeInMillis(date);
-        Date d = c.getTime();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        holder.date.setText(sdf.format(d).toString());
+        try {
+            holder.date.setText(Const.generateDateTimeFromTimestamp(coursPostsList.get(position).getDate()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         // Cours Description
         holder.coursDesc.setText(coursPostsList.get(position).getCoursDesc());
         // Cours Title
@@ -105,9 +99,16 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.myViewHolder
         // Cours video
         Uri uri = Uri.parse(url_video);
         holder.playerView.setVideoURI(uri);
+        //holder.playerView.seekTo(3);
+        holder.playerView.setZOrderOnTop(true);
         // Cours Views
         holder.coursViews.setText(coursPostsList.get(position).getViews()+"");
         // Cours Video
+        //long thumb = getLayoutPosition()*1000;
+        RequestOptions options = new RequestOptions().frame(10);
+        Glide.with(mContext)
+                .load(uri)
+                .into(holder.videoThumbnail);
 
         holder.playVideo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +141,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.myViewHolder
                             }
                         });
                         holder.playVideo.setVisibility(View.GONE);
+                        holder.videoThumbnail.setVisibility(View.GONE);
                         holder.playerView.start();
 
 
@@ -147,15 +149,21 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.myViewHolder
         });
 
 
+
+
         holder.playerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                holder.playerView.stopPlayback();
                 Bundle bundle= new Bundle();
                 bundle.putString("url_video",url_video);
+                bundle.putLong("vedioPosition",currentPosition);
                 final NavController navController = Navigation.findNavController(activity,R.id.nav_host_fragment);
                 navController.navigate(R.id.action_video_to_videofragment,bundle);
             }
         });
+
+
 
     }
 
@@ -178,6 +186,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.myViewHolder
         FloatingActionButton playVideo;
         ImageButton goToDetails;
         TextView coursViews;
+        ImageView videoThumbnail;
 
 
         View view;
@@ -194,6 +203,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.myViewHolder
             playVideo = itemView.findViewById(R.id.cours_play_video);
             goToDetails = itemView.findViewById(R.id.cours_go_to_details);
             coursViews=itemView.findViewById(R.id.cours_views);
+            videoThumbnail = itemView.findViewById(R.id.videoThumbnail);
 
 
         }
@@ -212,5 +222,10 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.myViewHolder
         disposable.clear();
     }
 
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    void onPause() {
+
+    }
 }
 

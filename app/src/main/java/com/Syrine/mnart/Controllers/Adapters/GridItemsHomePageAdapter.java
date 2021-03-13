@@ -10,13 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Syrine.mnart.Models.Category;
 import com.Syrine.mnart.Models.Post;
 import com.Syrine.mnart.R;
 import com.bumptech.glide.Glide;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 

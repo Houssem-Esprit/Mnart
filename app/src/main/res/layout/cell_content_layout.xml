@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/M_colorWhite"
+    android:background="@color/M_whiteSecond"
     android:visibility="gone"
     android:id="@+id/cell_content_id"
     android:orientation="vertical">
@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/M_colorPrimary"
+        android:background="@color/M_whiteSecond"
         android:orientation="vertical">
 
         <TextView
@@ -19,11 +19,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Artwork name"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:layout_marginBottom="3dp"
             android:layout_marginTop="3dp"
-            android:textColor="@color/M_colorWhite"
-            android:fontFamily="@font/alef_bold"
+            android:textColor="@color/M_colorBlackDark"
+            android:fontFamily="@font/alef"
             android:gravity="center"/>
     </LinearLayout>
 
@@ -37,29 +37,52 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Owner"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_baseline_flag_24"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Owner"
+                android:textSize="18dp"
+                android:fontFamily="@font/alef"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/M_gray_popUp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="5dp"
+            android:paddingLeft="5dp"
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/Post_details_userImg"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:scaleType="centerCrop"
+                android:background="?android:attr/selectableItemBackground"
                 app:civ_border_color="@color/M_colorPrimary"
                 app:civ_border_width="1dp"
                 />
@@ -75,15 +98,33 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="UserName"
-                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="@font/alef"
                     android:textColor="@color/M_colorBlackDark"/>
-                <TextView
-                    android:id="@+id/Post_details_date"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="10dp"
-                    android:textStyle="bold"
-                    android:text="12/10/2021"/>
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/time_dot"/>
+
+                    <TextView
+                        android:id="@+id/Post_details_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13dp"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/comfortaa"
+                        android:textStyle="bold"
+                        android:text="12/10/2021"/>
+                </LinearLayout>
+
 
                 <RatingBar
                     style="?android:attr/ratingBarStyleSmall"
@@ -91,6 +132,7 @@
                     android:scaleX="1.5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="-5dp"
                     android:layout_marginTop="10dp"
                     android:isIndicator="false"
                     android:numStars="5"
@@ -104,9 +146,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
             android:orientation="vertical">
             <View
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="0.8dp"
                 android:background="@color/M_gray_popUp"/>
@@ -115,10 +158,12 @@
                 android:id="@+id/Post_details_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:text="3000$"
+                android:textColor="@color/M_colorPrimary"
                 android:textStyle="bold"
-                android:textSize="30dp"
+                android:textSize="25dp"
+                android:fontFamily="@font/comfortaa"
                 android:layout_gravity="center"
                 android:gravity="center"/>
 
@@ -133,18 +178,32 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Description"
-            android:textSize="10dp"
+            android:fontFamily="@font/alef"
             android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/Post_details_desc"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/M_colorBlackDark"
-            android:inputType="textMultiLine"
-            android:textAlignment="textStart"
-            android:text="Contribute to jd-alexander/LikeButton development by creating an account on GitHub. ... dependencies { ... compile 'com.github.jd-alexander:LikeButton:0.2.3' } } ... To listen to events from your like button, simply implement the listener that's ."/>
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <view
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                class="android.widget.LinearLayout"
+                android:background="@color/M_colorPrimary"/>
+            <TextView
+                android:id="@+id/Post_details_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/M_colorBlackDark"
+                android:inputType="textMultiLine"
+                android:textAlignment="textStart"
+                android:text="Contribute to jd-alexander/LikeButton development by creating an account on GitHub. ... dependencies { ... compile 'com.github.jd-alexander:LikeButton:0.2.3' } } ... To listen to events from your like button, simply implement the listener that's ."/>
+
+        </LinearLayout>
+
 
 
         <LinearLayout
@@ -173,13 +232,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="10dp"
-                android:textSize="15dp"
+                android:textSize="12dp"
                 android:text="Comments"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_gravity="bottom"/>
 
             <TextView
+                android:id="@+id/cell_content_comments"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="11dp"
@@ -196,6 +256,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/M_whiteSecond"
             app:cardElevation="5dp">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -227,7 +288,7 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:id="@+id/cours_go_to_details"
+                        android:id="@+id/commentButton"
                         android:layout_gravity="center"
                         android:layout_width="45dp"
                         android:layout_marginTop="5dp"

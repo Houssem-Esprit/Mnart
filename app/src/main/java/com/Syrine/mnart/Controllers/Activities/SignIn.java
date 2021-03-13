@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,20 +14,14 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.Syrine.mnart.Models.User;
+import com.Syrine.mnart.Models.UserResponse;
 import com.Syrine.mnart.R;
-import com.Syrine.mnart.Utils.DataManager.RetrofitClient;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
 import com.Syrine.mnart.Utils.DataManager.UtilApi;
 import com.Syrine.mnart.Utils.Session;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.gson.JsonObject;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -38,7 +31,6 @@ import io.reactivex.rxjava3.core.ObservableOnSubscribe;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class SignIn extends AppCompatActivity {
@@ -144,7 +136,7 @@ public class SignIn extends AppCompatActivity {
                             .toObservable()
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(new Observer<User>() {
+                            .subscribe(new Observer<UserResponse>() {
                                 @Override
                                 public void onSubscribe(@NonNull Disposable d) {
                                     Log.d(TAG,"onSubscribe: created");
@@ -152,9 +144,9 @@ public class SignIn extends AppCompatActivity {
                                 }
 
                                 @Override
-                                public void onNext(@NonNull User user) {
-                                    Log.d(TAG,"onNext: "+user.getFirstName());
-                                    initSession(user);
+                                public void onNext(@NonNull UserResponse user) {
+                                    Log.d(TAG,"onNext: ");
+                                    initSession(user.getResult());
                                     Snackbar.make(v,"Authenticated Successfully!",Snackbar.LENGTH_SHORT).show();
 
                                     //editor.putInt("idUser",user.getIdUser());
@@ -202,6 +194,7 @@ public class SignIn extends AppCompatActivity {
         try {
             // fill the current user object with the one coming from network request (userSerialized)
             currentUser.setIdUser(userSerialized.getIdUser());
+            Log.d("AAAAAAAAAAAAAAAAAAA","UUUUUUU USER id :"+currentUser.getIdUser());
             currentUser.setFirstName(userSerialized.getFirstName());
             currentUser.setLastName(userSerialized.getLastName());
             currentUser.setEmail(userSerialized.getEmail());

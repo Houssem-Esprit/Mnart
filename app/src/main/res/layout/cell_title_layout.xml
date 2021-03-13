@@ -1,174 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/M_whiteSecond"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/titleLayoutLogo"
-            android:layout_weight="3"
+        <LinearLayout
             android:layout_width="0dp"
-            android:background="@drawable/scupture_logo"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop"/>
+            android:layout_height="170dp"
+            android:layout_weight="3"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/titleLayoutLogo"
+                android:layout_width="match_parent"
+                android:background="@drawable/scupture_logo"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+        </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_weight="7"
             android:layout_width="0dp"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:padding="10dp"
-            android:background="@color/M_colorPrimary"
+            android:background="@color/M_whiteSecond"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="2"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/cell_title_userImg"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:scaleType="centerCrop"
                     android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:text="Publisher:"
-                    android:textColor="@color/M_whiteSecond"
-                    android:textStyle="bold"
-                    android:textSize="11dp"/>
-
-                <TextView
-                    android:id="@+id/cell_title_userName"
-                    android:layout_width="0dp"
-                    android:layout_weight="8"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/M_colorWhite"
-                    android:textSize="18dp"
-                    android:fontFamily="@font/alef_bold"
-                    android:text="Salvador Dali"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1.2"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:text="Title:"
-                    android:textColor="@color/M_whiteSecond"
-                    android:textStyle="bold"
-                    android:textSize="11dp"/>
-
-                <TextView
-                    android:id="@+id/cell_title_postTitle"
-                    android:layout_width="0dp"
-                    android:layout_weight="8.8"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/M_colorWhite"
-                    android:textSize="15dp"
-                    android:fontFamily="@font/alef_bold"
-                    android:text="Sculpture in Time"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/date_icon"
+                    app:civ_border_color="@color/M_colorPrimary"
+                    android:background="?android:attr/selectableItemBackground"
+                    app:civ_border_width="0.5dp"
                     />
 
-                <TextView
-                    android:id="@+id/cell_title_postDate"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="@color/M_gray_popUp"
-                    android:textSize="13dp"
-                    android:fontFamily="@font/alef_bold"
-                    android:text="12-8-2021 13:00h"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                >
-
-                <LinearLayout
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:padding="6dp"
-                android:background="@drawable/price_background">
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/cell_title_postPrice"
+                        android:id="@+id/cell_title_userName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:text="3000$"
-                        android:textColor="@color/M_colorWhite"/>
+                        android:background="?android:attr/selectableItemBackground"
+                        android:fontFamily="@font/alef"
+                        android:text="\@Salvador Dali"
+                        android:textColor="@color/M_colorBlackDark"
+                        android:textSize="15dp" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/time_dot"/>
+
+                        <TextView
+                            android:id="@+id/cell_title_postDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:textColor="@color/S_colorGray"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="12-8-2021 13:00h"
+                            />
+
+                    </LinearLayout>
                 </LinearLayout>
 
+            </LinearLayout>
 
-                <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cell_title_postTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|right"
-                    android:orientation="horizontal">
+                    android:textColor="@color/M_colorBlackDark"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/alef"
+                    android:text="Sculpture in Time" />
+            </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/thumb_up"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/cell_title_likes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_gravity="bottom"
-                        android:textStyle="bold"
-                        android:text="210"/>
+                <view
+                    android:layout_width="3dp"
+                    class="android.widget.LinearLayout"
+                    android:layout_height="match_parent"
+                    android:background="@color/M_colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/cell_title_postDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="12dp"
+                    android:lineSpacingExtra="1dp"
+                    android:inputType="textMultiLine"
+                    android:text="At the same time, a model for a more supportive and knowledgable patron is coming into focus with successful curators and artists taking major steps to support emerging artists. Some of these bellwethers are noticeable in the biographies of multiple artists throughout the forthcoming list. Curator Bill Arning, Swizz Beatz, and residencies like The Macedonia Institute or Long Road Projects come to mind"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cell_title_postLikes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 Likes"
+                    android:textSize="13dp"/>
+
+                <TextView
+                    android:id="@+id/cell_title_postComments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="0 Comments"
+                    android:textSize="13dp"/>
+            </LinearLayout>
 
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:src="@drawable/bubble_comment"/>
-
-                    <TextView
-                        android:id="@+id/cell_title_comments"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_gravity="bottom"
-                        android:textStyle="bold"
-                        android:text="18"/>
-
-                </LinearLayout>
 
 
-            </FrameLayout>
+
+
 
         </LinearLayout>
 

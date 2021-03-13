@@ -36,6 +36,7 @@
                 android:src="@drawable/like_icon_badge"
                 app:civ_border_color="@color/M_colorPrimary"
                 app:civ_border_width="0dp"
+                android:background="?android:attr/selectableItemBackground"
                 />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton

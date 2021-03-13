@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="?attr/actionButtonStyle"
+            android:clipToPadding="false"
+            android:fitsSystemWindows="true"
+            android:focusable="true"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/likes_userReactorImg"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/like_icon_badge"
+                app:civ_border_color="@color/M_colorPrimary"
+                app:civ_border_width="0dp"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/CategoryImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-0dp"
+                android:layout_marginRight="-0dp"
+                android:layout_marginBottom="-5dp"
+                app:backgroundTint="@color/M_colorPrimary"
+                app:srcCompat="@drawable/like_icon_badge"
+                app:tint="@color/M_colorWhite"
+                android:layout_gravity="right|end|bottom"
+                android:enabled="false"
+                android:focusable="true"
+                app:fabSize="mini"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="left"
+                    android:text="Houssem Rekhaiess "
+                    android:inputType="textMultiLine"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:textColor="@color/M_colorBlackDark"
+                    android:textSize="6pt" />
+
+                <TextView
+                    android:id="@+id/likes_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="left"
+                    android:text="12 dec. 2020"
+                    android:textColor="@color/S_colorGray"
+                    android:textSize="5pt" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mentionUser_button"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:strokeColor="@color/M_colorBlackDark"
+                    app:strokeWidth="0.5dp"
+                    android:textColor="@color/M_colorBlackDark"
+                    app:icon="@drawable/comment_buble"
+                    app:iconTint="@color/M_colorBlackDark"
+                    app:iconPadding="8dp"
+                    app:iconGravity="start"
+                    app:iconSize="22dp"
+                    android:text="Mention"
+                    android:textSize="10dp"
+                    android:layout_gravity="right"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

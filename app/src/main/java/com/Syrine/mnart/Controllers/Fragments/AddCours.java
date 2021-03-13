@@ -3,8 +3,6 @@ package com.Syrine.mnart.Controllers.Fragments;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +23,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,11 +40,7 @@ import com.google.android.material.snackbar.Snackbar;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -291,7 +283,6 @@ public class AddCours extends Fragment implements AdapterView.OnItemSelectedList
             ActivityCompat.requestPermissions(getActivity(),
                     new String[] { permission },
                     requestCode);
-            Log.d(TAG,"NNNNNNNNNNNNNNNNNNNN");
             return false;
 
         }
@@ -301,7 +292,6 @@ public class AddCours extends Fragment implements AdapterView.OnItemSelectedList
                     "Permission already granted",
                     Toast.LENGTH_SHORT)
                     .show();
-            Log.d(TAG,"WWWWWWWWWWWWWWWWWWWWW");
             pickFromGallery();
             return true;
 

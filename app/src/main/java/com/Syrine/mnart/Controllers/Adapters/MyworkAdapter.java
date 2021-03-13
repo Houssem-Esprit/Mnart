@@ -3,8 +3,6 @@ package com.Syrine.mnart.Controllers.Adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,7 +16,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Syrine.mnart.Models.Category;
 import com.Syrine.mnart.Models.Post;
 import com.Syrine.mnart.R;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
@@ -84,6 +81,7 @@ public class MyworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
         if(holder instanceof myViewHolder){
             String url_img_post = "http://localhost:3000/public/images/posts/"+PostsList.get(position).getImgPost();
             String url_img_user = "http://localhost:3000/public/images/users/"+ Session.getInstance().getUser().getImage();

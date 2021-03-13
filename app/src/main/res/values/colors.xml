@@ -20,5 +20,6 @@
     <color name="M_colorInvalidGray">#AAAAAA</color>
     <color name="S_colorGray">#9B9B9B</color>
     <color name="M_colorGold">#FFD700</color>
+    <color name="black_overlay">#66000000</color>
 
 </resources>

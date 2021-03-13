@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_video_to_addCours"
             app:destination="@id/addCours" />
+        <action
+            android:id="@+id/action_video_to_profileGuestPage"
+            app:destination="@id/profileGuestPage" />
     </fragment>
     <fragment
         android:id="@+id/allPosts"
@@ -53,6 +56,15 @@
         <action
             android:id="@+id/action_allPosts_to_notificationS"
             app:destination="@id/notificationS" />
+        <action
+            android:id="@+id/action_allPosts_to_commentPage"
+            app:destination="@id/commentPage" />
+        <action
+            android:id="@+id/action_allPosts_to_likesDialogFragment"
+            app:destination="@id/likesDialogFragment" />
+        <action
+            android:id="@+id/action_allPosts_to_profileGuestPage"
+            app:destination="@id/profileGuestPage" />
     </fragment>
     <fragment
         android:id="@+id/videofragment"
@@ -92,6 +104,48 @@
         tools:layout="@layout/notification_card_layout" >
         <action
             android:id="@+id/action_notificationS_to_allPosts"
+            app:destination="@id/allPosts" />
+        <action
+            android:id="@+id/action_notificationS_to_profileGuestPage"
+            app:destination="@id/profileGuestPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentPage"
+        android:name="com.Syrine.mnart.Controllers.Fragments.CommentPage"
+        android:label="fragment_comment_page"
+        tools:layout="@layout/fragment_comment_page" >
+        <action
+            android:id="@+id/action_commentPage_to_allPosts"
+            app:destination="@id/allPosts" />
+        <action
+            android:id="@+id/action_commentPage_to_likesDialogFragment"
+            app:destination="@id/likesDialogFragment" />
+        <action
+            android:id="@+id/action_commentPage_to_profileGuestPage"
+            app:destination="@id/profileGuestPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/likesDialogFragment"
+        android:name="com.Syrine.mnart.Controllers.Fragments.LikesDialogFragment"
+        android:label="fragment_likes_dialog"
+        tools:layout="@layout/fragment_likes_dialog" >
+        <action
+            android:id="@+id/action_likesDialogFragment_to_commentPage"
+            app:destination="@id/commentPage" />
+        <action
+            android:id="@+id/action_likesDialogFragment_to_allPosts"
+            app:destination="@id/allPosts" />
+        <action
+            android:id="@+id/action_likesDialogFragment_to_profileGuestPage"
+            app:destination="@id/profileGuestPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileGuestPage"
+        android:name="com.Syrine.mnart.Controllers.Fragments.ProfileGuestPage"
+        android:label="fragement_guest_profile"
+        tools:layout="@layout/fragement_guest_profile" >
+        <action
+            android:id="@+id/action_profileGuestPage_to_allPosts"
             app:destination="@id/allPosts" />
     </fragment>
 </navigation>

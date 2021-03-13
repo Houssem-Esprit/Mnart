@@ -27,6 +27,7 @@
                 android:layout_marginRight="10dp"
                 android:scaleType="centerCrop"
                 app:civ_border_color="@color/M_colorPrimary"
+                android:background="?android:attr/selectableItemBackground"
                 app:civ_border_width="1dp"
            />
 
@@ -41,6 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="User Name"
+                    android:background="?android:attr/selectableItemBackground"
                     android:textColor="@color/M_colorBlackDark"
                     android:textStyle="bold"/>
 
@@ -91,19 +93,33 @@
             android:orientation="vertical">
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="250dp"
                 android:background="@color/M_colorBlackDark">
+
                 <VideoView
                     android:id="@+id/video_view"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
+                    android:layout_height="match_parent"
                     android:background="@color/M_colorBlackDark"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/videoThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="visible"
+                    android:scaleType="centerCrop"/>
+
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/cours_play_video"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:fabSize="mini"
+                    android:elevation="5dp"
                     android:layout_gravity="center"
                     app:backgroundTint="@color/M_whiteSecond"
                     app:srcCompat="@drawable/play_video"/>

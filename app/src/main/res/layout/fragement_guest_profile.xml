@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Controllers.Fragments.ProfileGuestPage">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:textColor="#33b5e5"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:background="@color/M_colorWhite"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/likes_fragement_back_arrow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="top|left|start"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/back_arraw_icon"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/guest_profile_relationState_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginRight="15dp"
+                android:text="blaa"
+                app:elevation="0dp"
+                android:elevation="0dp"
+                android:textSize="11dp"
+                app:backgroundTint="@color/M_errorRed"
+                app:iconSize="22dp"
+                app:iconTint="@color/M_colorWhite" />
+
+
+        </FrameLayout>
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:layout_weight="4.5">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_guest_first_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                android:layout_marginBottom="40dp">
+
+                <ImageView
+                    android:id="@+id/guestprofile_userCoverImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:src="@drawable/absurd_design_thinking"
+                    android:scaleType="centerInside"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/guestprofile_userImg"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                app:layout_anchor="@id/profile_guest_first_card"
+                app:layout_anchorGravity="bottom|center_horizontal"
+                android:layout_gravity="center|bottom"
+                android:scaleType="centerCrop"
+                android:elevation="6dp"
+                app:civ_border_color="@color/M_colorBlackDark"
+                app:civ_border_width="2dp"
+                />
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/guestprofile_userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/comfortaa"
+                    android:gravity="center"
+                    android:text="UserName"
+                    android:textColor="@color/M_colorBlackDark"
+                    android:textSize="11pt" />
+
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="PAINTER"
+                android:textColor="@color/M_colorBlackDark"
+                android:textSize="6pt" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="0dp"
+            android:layout_weight="6.5"
+            android:orientation="vertical">
+
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/likes_fragement_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"/>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/profile_user_to_user_relationstate_bottomsheet"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

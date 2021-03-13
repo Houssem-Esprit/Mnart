@@ -12,13 +12,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.VideoView;
 
-import com.Syrine.mnart.Controllers.Adapters.CategoryAdapter;
 import com.Syrine.mnart.Controllers.Adapters.CoursAdapter;
 import com.Syrine.mnart.Controllers.Interfaces.SocketCallbackInterface;
-import com.Syrine.mnart.Models.Category;
 import com.Syrine.mnart.Models.CoursPost;
 import com.Syrine.mnart.R;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
@@ -35,6 +33,8 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.socket.client.Socket;
+
+import static androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_DRAGGING;
 
 
 public class Chat extends Fragment {
@@ -87,10 +87,6 @@ public class Chat extends Fragment {
                     @Override
                     public void onNext(@NonNull List<CoursPost> cat) {
                         Log.d(TAG,"onNext: ");
-                        for (int i=0;i<cat.size();i++){
-                        Log.d(TAG,"Videos VVVVVVVVVVV : "+cat.get(i).getCoursVideo());
-                            Log.d(TAG,"Views SSSSSSSSSS : "+cat.get(i).getViews());
-                        }
                         coursAdapter = new CoursAdapter(getContext(),getActivity(),cat);
                         getLifecycle().addObserver(coursAdapter);
                         CoursPostRecyclerView.setAdapter(coursAdapter);
@@ -109,6 +105,21 @@ public class Chat extends Fragment {
                         disposable.clear();
                     }
                 });
+
+      /*  CoursPostRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@androidx.annotation.NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                int currentPosition = linearLayoutManager.findFirstVisibleItemPosition();
+                if (newState == SCROLL_STATE_DRAGGING){
+                    RecyclerView.ViewHolder holder = CoursPostRecyclerView.findViewHolderForLayoutPosition(currentPosition);
+                    VideoView v =holder.itemView.findViewById(R.id.video_view);
+                    if(v.isPlaying()){
+                        v.stopPlayback();
+                    }
+                }
+            }
+        }); */
 
         addCours.setOnClickListener(new View.OnClickListener() {
             @Override

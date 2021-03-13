@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.Syrine.mnart.Controllers.Adapters.CoursAdapter;
 import com.Syrine.mnart.Controllers.Interfaces.SocketCallbackInterface;
 import com.Syrine.mnart.R;
 import com.Syrine.mnart.Utils.Session;
@@ -23,8 +22,6 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.Util;
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import io.socket.client.Socket;
 
@@ -35,7 +32,7 @@ public class videofragment extends Fragment {
     private SimpleExoPlayer player;
     private boolean playWhenReady = true;
     private int currentWindow = 0;
-    private long playbackPosition = 0;
+    private long playbackPosition;
     PlayerView playerView;
     String url_video;
     Uri uri_video;
@@ -61,6 +58,12 @@ public class videofragment extends Fragment {
         Log.d("VIDEO_FRAGMENT","Video URL : "+url_video);
         uri_video = Uri.parse(url_video);
 
+        Log.d("AAAAAAAAAAAAAAAAAAAA","SEEK TIME : "+getArguments().getLong("vedioPosition"));
+        if (getArguments().getLong("vedioPosition") != 0){
+            playbackPosition = getArguments().getLong("vedioPosition");
+        }else {
+            playbackPosition =0;
+        }
         return  viewroot;
     }
 

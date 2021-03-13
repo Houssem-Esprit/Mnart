@@ -120,13 +120,15 @@ public class MainActivity extends AppCompatActivity implements SocketCallbackInt
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-                if (destination.getId()==R.id.videofragment || destination.getId()==R.id.addPage || destination.getId()==R.id.video || destination.getId()==R.id.addCours ||destination.getId()==R.id.allPosts){
+                if (destination.getId()==R.id.videofragment || destination.getId()==R.id.addPage || destination.getId()==R.id.video || destination.getId()==R.id.addCours ||destination.getId()==R.id.allPosts || destination.getId()==R.id.commentPage||destination.getId()==R.id.likesDialogFragment ||destination.getId()==R.id.profileGuestPage){
 
                     bottomAppBar.setVisibility(View.GONE);
                     bottomNavigationView.setVisibility(View.GONE);
                     addPost.setVisibility(View.GONE);
                     if (destination.getId()==R.id.videofragment){
                         appBarLayout.setVisibility(View.GONE);
+                    }else if(destination.getId()==R.id.commentPage){
+                        //appBarLayout.setAlpha(0.4F);
                     }
                 }else {
                     bottomAppBar.setVisibility(View.VISIBLE);
@@ -217,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements SocketCallbackInt
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d("MainActivity","DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAA: "+args[0].toString());
+                        Log.d("MainActivity",": "+args[0].toString());
                         data = (int) args[0];
 
                     }
@@ -261,14 +263,14 @@ public class MainActivity extends AppCompatActivity implements SocketCallbackInt
 
     @Override
     public void onNotifSocketEmitedToServer() {
-        Log.d(TAG,"NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN Notif callback Fired !!!! ");
+        Log.d(TAG," Notif callback Fired !!!! ");
         mSocket.on("getNotifications", new Emitter.Listener() {
             @Override
             public void call(Object... args) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d("MainActivity","DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAA: "+args[0].toString());
+                        Log.d("MainActivity",": "+args[0].toString());
                         data = (int) args[0];
                         final MenuItem menuItem = menu.findItem(R.id.notificationS);
                         actionView = menuItem.getActionView();

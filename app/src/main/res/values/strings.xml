@@ -8,6 +8,8 @@
     <string name="alerte_support_text">You are about to delete this post permanently, Are you sure?</string>
     <string name="notification_content"> %1$d has reacted to your post \u003C %2$d \u003E </string>
     <string name="notification_content_personal"> You have reacted to your post \u003C %1$d \u003E </string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 
 </resources>

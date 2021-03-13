@@ -10,9 +10,7 @@
     tools:context=".Controllers.Fragments.AllPosts">
 
     <!-- TODO: Update blank fragment layout -->
-    <androidx.appcompat.widget.SearchView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/allPosts_RecyclerView"

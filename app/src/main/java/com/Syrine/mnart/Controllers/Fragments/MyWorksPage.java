@@ -17,9 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.Syrine.mnart.Controllers.Adapters.MyworkAdapter;
-import com.Syrine.mnart.Controllers.Adapters.PostCatAdapter;
 import com.Syrine.mnart.Models.Post;
-import com.Syrine.mnart.Models.PostByCategory;
 import com.Syrine.mnart.R;
 import com.Syrine.mnart.Utils.DataManager.UserApi;
 import com.Syrine.mnart.Utils.DataManager.UtilApi;
