@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="index.css"><header class="container">
-  <img class ="img-header" src="images/mnart.png" alt="Mnart logo" width=100>
+  <img style="border-radius:50%" src="images/mnart.png" alt="Mnart logo" width=100>
   <h1>mnart</h1>
 </header>
 <body class = "secContainer">
