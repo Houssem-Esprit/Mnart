@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    font-variant: small-caps;
+    font-size: 28px;
+  }
+  
+  /*********************/
+  /* Additional styles */
+  /*********************/
+  
+  /* Make it pretty */
+
+  .secContainer {
+
+  }
+  
+  body {
+    margin: 25;
+    font-size: 20px;
+    font-variant: normal;
+    font-family: Trebuchet MS, Helvetica, sans-serif;
+    letter-spacing: 0.2em;
+    text-align: start;
+  }
+  
+  header {
+    padding: 1rem;
+  }
+  
+  header > * {
+    margin: 1rem;
+  }
+  .img-header {
+    border-radius: 50%;
+  }
+  
