@@ -223,14 +223,7 @@ public class AddPage extends Fragment implements AdapterView.OnItemSelectedListe
         // Result code is RESULT_OK only if the user selects an Image
 
         Uri selectedImage;
-        String[] filePathColumn = {DATA};
-
-        Cursor cursor;
-        int columnIndex;
-        String imgDecodableString;
-        File imgFile;
-
-        if (resultCode == Activity.RESULT_OK)
+        if (resultCode == Activity.RESULT_OK){
             switch (requestCode) {
                 case GALLERY_REQUEST_CODE:
                     //data.getData return the content URI for the selected Image
@@ -247,7 +240,7 @@ public class AddPage extends Fragment implements AdapterView.OnItemSelectedListe
                     imgPost.setImageURI(Uri.parse(cameraFilePath));
                     break;
             }
-
+        }
 
     }
 

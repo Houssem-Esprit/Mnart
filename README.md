@@ -22,7 +22,7 @@ Download or clone the project:
 https://github.com/Houssem-Esprit/Mnart.git
 ```
 
-> Make sure to download the backend servers [here](http://github.com) and [here](http://github.com).
+> Make sure to download the backend servers [here](https://github.com/Houssem-Esprit/Mnart-Backend-) and [here](https://github.com/Houssem-Esprit/Mnart-Backend-Socket-).
 
 ## Screenshot
 
